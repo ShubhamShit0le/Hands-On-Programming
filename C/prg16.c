@@ -1,65 +1,43 @@
-/*
-
-Write a program which accept range from user and return addition of all even
-numbers in between that range. (Range should contains positive numbers only)
-Input : 23 30
-Output : 108
-
-*/
-
-
-
 #include<stdio.h>
 
-
-int RangeEvenAdd(int iStart,int iEnd)
+int  Display( int ino )     
 {
-
-   int i = 0;
-   int iSum = 0;
+	auto int idigit = 0;    
+	auto int isum = 0;
+	  
+	   if (ino<0)
+	  {
+		  ino = -ino;
+	  }
+	  
+	  
+	  while(ino != 0)
+	  {
+		  
    
-   for(i = iStart ; i <= iEnd; i++)
-   {
-
-   	if((i % 2)==0)
-   	{
-
-       iSum = iSum + i;
-
-   	}
-   	
-
-   }
-
-   return iSum;
-
+	     idigit = ino % 10;
+         isum = isum + idigit;
+	    ino = ino / 10;
+	  
+	  } 
+	  
+	   return isum;
+	  
+	
 }
 
-
 int main()
-{
-	int iVal1 = 0;
-	int iVal2 = 0;
-	int iRet = 0;
-
-  printf("\nEnter Starting Point : ");
-  scanf("%d",&iVal1);
-
-  printf("\nEnter Ending Point : ");
-  scanf("%d",&iVal2);
-
-
-   iRet = RangeEvenAdd(iVal1,iVal2);
-
-   if(iRet < 0)
-   {
-   	iRet = -iRet;
-   }
-
-   printf("\nEven Addition Is : %d",iRet);
-
-   printf("\n");
-
-   return 0;
-
+{	
+      auto int  ival = 0;
+	  auto int iret =0;
+	  
+	  printf("\n Enter the number : ");
+	  scanf("%d",&ival);
+   
+	 iret = Display(ival);     // function call
+	 
+	 printf("\n Addition Of Digit Is : %d",iret);
+ 	
+	return 0;
+	
 }

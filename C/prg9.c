@@ -1,47 +1,45 @@
 #include<stdio.h>
 
-int Reverce(int iNo)
+int  CountEven( int ino )     //function defination
 {
-   int iDigit = 0;
-   int iRev = 0;
-   
-    if(iNo < 0)
-    {
-    	iNo = -iNo;
-    }
-
-
-
-   while(iNo != 0)
-   {
-   	iDigit = iNo % 10;
-
-   	iRev = iRev * 10 + iDigit;
-
-   	iNo = iNo / 10;
-
-   }
-   return iRev;
-
+	auto int idigit = 0;    // local variable
+	auto int icnt = 0;
+	  
+	   if (ino<0)
+	  {
+		  ino = -ino;
+	  }
+	  
+	  
+	  while(ino != 0)
+	  {
+	     idigit = ino % 10;
+		
+         if((idigit % 2)== 0)
+		 {			 
+              icnt++;
+	  
+	     } 
+		   ino = ino /10;
+	  }	   
+	  
+	   return icnt;
+	  
+	
 }
 
 int main()
-{
-
-  int iVal = 0;
-  int iRet = 0;
-
-
-  printf("\nEnter Number : ");
-  scanf("%d",&iVal);
-
-  iRet = Reverce(iVal);
-
-  printf("\nReverse Number iS : %d ",iRet);
-
-  printf("\n");
-
-  return 0;
-
-
+{	
+      auto int  ival = 0;
+	  auto int iret =0;
+	  
+	  printf("\n Enter the number : ");
+	  scanf("%d",&ival);
+   
+	 iret = CountEven(ival);     // function call
+	 
+	 printf("\n Number Of Even Digits Are : %d",iret);
+ 	
+	return 0;
+	
 }

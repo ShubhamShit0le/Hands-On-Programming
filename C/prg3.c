@@ -1,44 +1,41 @@
+
+
 #include<stdio.h>
 
-int AddEven(int iNo)
+void Display(int ival)
 {
-	int iDigit = 0;
-	int iAdd = 0;
-
-	if (iNo < 0)
+	
+     int i = 0;
+	 
+	 if(ival<0)      //input updater
+	 {
+		 ival=-ival;
+     }
+	 
+    for(i=ival; i>0; i--)
 	{
-		iNo = -iNo;
-	}
+      
+	    printf("%d\n",i);
+		
+		 
 
-	while(iNo != 0)
-	{
-		iDigit = iNo % 10;
+    }
 
-		if((iDigit % 2) == 0)
-		{
-			iAdd = iAdd + iDigit;
-		}
-
-		iNo = iNo / 10;
-	}
-
-	return iAdd;
 
 }
 
+
 int main()
 {
-	int iVal = 0;
-	int iRet = 0;
+	auto int ino = 0;
 
-	printf("\nEnter Number : ");
-	scanf("%d",&iVal);
+   printf("\nEnter Number You Want : ");
+   scanf("%d",&ino);  
 
-	iRet = AddEven(iVal);
-
-	printf("\nAdition Of Even Number is : %d",iRet);
-
-	printf("\n");
-
+   Display(ino);   //Function call
+   
 	return 0;
+	
+	
+	
 }

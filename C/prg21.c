@@ -1,40 +1,59 @@
-/*
-
-Accept number from user and display below pattern.
-Input : 4
-Output : # 1 * # 2 * # 3 * # 4 *
-
-*/
-
 #include<stdio.h>
+#include<stdbool.h>
+  
 
-void Display(int iNo)
+bool CheckPerfect(int inum)
 {
-
-int i = 0;
-
-printf("\n");
-
-for (i = 1; i <= iNo ; i++)
-{
-   
- printf("# %d * \t",i);
-
-}
-
-}
+	auto int icnt = 0;
+	auto int isum = 0;
+	
+	if(inum <0)
+	{
+		 inum = -inum;
+	}		 
+	
+      for(icnt = 1; icnt<=(inum /2); icnt++)
+	  {  
+	       if((inum % icnt)==0)
+		   {
+		   
+	       isum = isum +icnt;
+	     }	 
+	  }
+	
+	if(isum == inum)
+	{
+		return true;
+    }
+    else
+	{
+       return false;
+	}
+}	
 
 
 int main()
 {
-	int  iVal = 0;
+   auto int ival = 0;
+   auto bool bret = false;
+   
+   
+   printf("\nEnter Number : ");
+   scanf("%d",&ival);
+   
+     bret = CheckPerfect(ival);
+	 
+	 if(bret == true)
+	 {
+		  printf("\nNumber Is Perfect ");
+	 }
+    else
+	{
+         printf("\nNumber Is Not Perfect ");
+    }
+	
+   
+   return 0;
 
-	printf("\nEntern number : ");
-	scanf("%d",&iVal);
 
-	Display(iVal);
-
-	printf("\n");
-
-	return 0;
 }

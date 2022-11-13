@@ -1,59 +1,41 @@
-/*
-
-Write a program which accept range from user and return addition of all numbers
-in between that range. (Range should contains positive numbers only)
-Input : 23 30
-Output : 212
-
-*/
-
-
-
 #include<stdio.h>
+#include<stdbool.h>
 
-
-int RangeAddition(int iStart,int iEnd)
-{
-
-   int i = 0;
-   int iSum = 0;
-
-
-   for(i = iStart ; i <= iEnd; i++)
-   {
-      iSum = iSum + i;
-   }
-
-   return iSum;
-
-
-}
-
+int Reverse(int);
+bool CheckPallindrome(int);
 
 int main()
 {
-	int iVal1 = 0;
-	int iVal2 = 0;
-	int iRet = 0;
+    int iValue = 0;
+    bool bRet = false;
+    printf("Enter number\n");
+    scanf("%d",&iValue);
+    bRet = CheckPallindrome(iValue);
+    if(bRet == true)
+    {printf("Number is pallindrome\n");}
+    else
+    {printf("Number is not pallindrome\n");}
+    return 0;
+}
 
-  printf("\nEnter Starting Point : ");
-  scanf("%d",&iVal1);
+bool CheckPallindrome(int iInput)
+{
+    int iNumber = 0;
+    iNumber = Reverse(iInput);
+    if(iNumber == iInput)
+    {return true;}
+    else
+    {return false;}
+}
 
-  printf("\nEnter Ending Point : ");
-  scanf("%d",&iVal2);
-
-
-   iRet = RangeAddition(iVal1,iVal2);
-
-   if(iRet < 0)
-   {
-   	iRet = -iRet;
-   }
-
-   printf("\nAddition is : %d ",iRet);
-   
-   printf("\n");
-
-   return 0;
-
+int Reverse(int iNo)
+{
+    int iDigit = 0, iRev = 0;
+    while(iNo != 0)
+    {
+        iDigit = iNo % 10;
+        iRev = (iRev * 10) + iDigit;
+        iNo = iNo / 10;
+    }
+    return iRev;
 }

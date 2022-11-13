@@ -1,50 +1,34 @@
-/*
-
-Write a program which accept accept range from user and display all numbers in
-between that range in reverse order.
-Input : 23 35
-Output : 35 34 33 32 31 30 29 28 27 26 25 24 23
-
-*/
+/////////////////////////////////////////////////////////////////////////
+//   
+//  Accept number from user and display that number of * on screen .
+//  Input : 4
+//  Output : * * * *
+//
+/////////////////////////////////////////////
 
 
 #include<stdio.h>
 
-
-void DisplayRangeRev(int iStart,int iEnd)
+void Display(int ino)
 {
+   auto unsigned icnt = 0;
 
-   int i = 0;
-
-   printf("\n");
-
-   for(i = iEnd ; i >= iStart; i--)
+   for(icnt = 0; icnt<ino; icnt ++)
    {
-   	
-   	printf("%d\t",i);
-
-   }
-
-
+       printf("*\t");
+   }	   
+  
 }
 
 
 int main()
 {
-	int iVal1 = 0;
-	int iVal2 = 0;
-
-  printf("\nEnter Starting Point : ");
-  scanf("%d",&iVal1);
-
-  printf("\nEnter Ending Point : ");
-  scanf("%d",&iVal2);
-
-
-   DisplayRangeRev(iVal1,iVal2);
-
-   printf("\n");
-
-   return 0;
-
-}
+	
+	auto unsigned int ival = 0;
+	printf("Enter the Number :\n");
+	scanf("%d",&ival);
+	
+	Display(ival);
+	return 0;
+	
+}	

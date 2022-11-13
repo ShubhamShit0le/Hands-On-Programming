@@ -1,37 +1,34 @@
 #include<stdio.h>
 
-void DisplayFactor(int iNo)
+void Display( int ino )     //function defination
 {
-  int iFact = 0;
-
-  if(iNo < 0)
-  {
-  	iNo = -iNo;
-  }
-
-  for(iFact = 1; iFact <= (iNo/2); iFact++)
-  {
-  	if((iNo % iFact) == 0)
-  	{
-  		
-  		printf("%d\t",iFact);
-  	}
-  }
-
+	auto int idigit = 0;    // local variable
+	
+	  
+	  while(ino != 0)
+	  {
+		  
+   
+	     idigit = ino % 10;
+     
+	     printf("%d\t",idigit);
+	  
+	     ino = ino / 10;
+	  
+	  } 
+	  
+	
 }
 
 int main()
-{
-	int iVal = 0;
-
-
-
-	printf("\nEnter Number : ");
-	scanf("%d",&iVal);
-
-	 DisplayFactor(iVal);
-
-	printf("\n");
-
+{	
+      auto int  ival = 0;
+	  
+	  printf("\n Enter the number : ");
+	  scanf("%d",&ival);
+   
+	 Display(ival);     // function call
+ 	
 	return 0;
+	
 }

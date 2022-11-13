@@ -1,76 +1,37 @@
-/*
-
-Accept N numbers from user and return difference between frequency of 
-even number and odd numbers.
-Input : N : 7
-Elements :85 66 3 80 93 88 90
-Output : 1 (4 -3)
-
-*/
-
-
-
-
-
 #include<stdio.h>
-#include<stdlib.h>
 
-
-int Frequency(int Brr[],int iLength)
+void Display( int iRow , int iCol )
 {
-  
-  int i = 0;
-  int eCnt = 0;
-  int oCnt = 0;
+ 
+	 int i = 0;
+	 int j = 0;
+	 
 
-  for(i = 0; i < iLength; i++)
-  {
-  	if((Brr[i] % 2) == 0)
-  	{
-  		eCnt++;
-  	}
-  	else if((Brr[i] % 2) != 0)
-  	{
-  		oCnt++;
-  	}
-  }
-
-  return eCnt - oCnt;
+   for(i = 1; i<=iRow; i++)
+   {
+      for(j =1; j<=iCol; j++)
+	  {
+	     
+		 printf("%d\t",j);
+	  }
+	  printf("\n");
+   }
+ 
 }
-
 
 int main()
 {
-  int *ptr = NULL;
-
-  int iSize = 0;
-  int iRet = 0;
-  int i = 0;
-
- printf("\nEnter Array Size : ");
- scanf("%d",&iSize);
-
- ptr = (int*)malloc(sizeof(int) * iSize);
-
- printf("\nEnter Array Elements :\n");
- for(i = 0; i < iSize; i++)
- {
- 	scanf("%d",&ptr[i]);
- }
- 
- iRet = Frequency(ptr,iSize);
-
- if(iRet < 0)
- {
- 	iRet = -iRet;
- }
- 
- printf("\nFrequency Is : %d",iRet);
-
-  printf("\n");
-
-  free(ptr);
-
-  return 0;
-
-}
+	
+	auto int ival1 = 0;
+	auto int ival2 = 0;
+	printf("\nEnter  Number Of Row : ");
+	scanf("%d",&ival1);
+	
+	printf("\nEnter  Number Of Columns : ");
+	scanf("%d",&ival2);
+	
+	
+	Display(ival1,ival2);
+	return 0;
+	
+}	

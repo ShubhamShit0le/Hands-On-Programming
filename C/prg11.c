@@ -1,67 +1,43 @@
 #include<stdio.h>
-#include <stdbool.h>
 
-
-bool CheckPrime(int iNo)
+int Reverce(int ino )     //function defination
 {
-
-   int iCnt = 0;
-   int iFlag = 0;
-
-   if(iNo < 0)
-   {
-   	iNo = -iNo;
-   }
-
-   if(iNo == 1 || iNo == 0)
-   {
-   	return 0;
-
-   }
-
-   for(iCnt = 2; iCnt <= iNo/2; iCnt++)
-     {
-     	if(iNo % iCnt == 0)
-     	{
-     		iFlag = 1;
-     		break;
-     	}
-     }
-
-     if(iFlag == 0)
-     {
-     	return true;
-     }
-     else
-     {
-     	return false;
-     }
-
+	auto int idigit = 0;    // local variable
+	auto int irev = 0;
+	  
+	/*  if(ino < 0 )
+	  {
+		   ino = -ino;
+	  }*/
+	  
+	  
+	  
+	  while(ino != 0)
+	  {
+		  
+   
+	     idigit = ino % 10;
+          irev = irev * 10 +idigit;
+	     ino = ino / 10;
+	  
+	  } 
+	  
+	  return irev;
+	  
+	
 }
 
 int main()
-{
-   int iVal = 0;
-   bool bRet = false;
-
-   printf("\nEnter Number: ");
-   scanf("%d",&iVal);
-
-   bRet = CheckPrime(iVal);
-
-   if(bRet == true)
-   {
-  
-      printf("\nNumber is prime");
-
-   }
-   else
-   {
-   	printf("\nNumber is not prime");
-   }
-
-   printf("\n");
-
-   return 0;
-
+{	
+      auto int  ival = 0;
+	  auto int iret = 0;
+	  
+	  printf("\n Enter the number : ");
+	  scanf("%d",&ival);
+   
+	 iret = Reverce(ival);     // function call
+ 	 printf(" The Reverce Number Is : %d " , iret);
+	 
+	return 0;
+	
 }

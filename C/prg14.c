@@ -1,58 +1,54 @@
-/*
-
-Write a program which accept range from user and display all even numbers in
-between that range.
-
-Input : 23 35
-Output : 24 26 28 30 32 34
-
-*/
-
-
-
 #include<stdio.h>
 
-
-void DisplayEven(int iStart,int iEnd)
+    int DisplayTable(int ino ,int ival)
 {
-
-   int i = 0;
-
-   printf("\n");
-
-   for(i = iStart ; i <= iEnd; i++)
-   {
-
-   	if((i % 2)==0)
-   	{
-
-   		printf("%d\t",i);
-
-   	}
-   	
-
-   }
-
-
-}
+       auto int imulti = 1;
+	   auto int icnt = 0;
+      
+     if (ino < 0)
+	 {
+		  ino = -ino; 
+	 }
+		
+     if (ival < 0)
+	 {
+		  ival = -ival; 
+	 }
+	 
+	 for (icnt  = 1  ; icnt<= ival; icnt++)
+	 {
+	          
+			 imulti = imulti * ino;
+			  
+	 }	 
+	  return imulti;
+}	 
 
 
 int main()
 {
-	int iVal1 = 0;
-	int iVal2 = 0;
+     auto int ival1 = 0;
+	 auto int ival2 = 0;
+	 auto int iret = 0;
+ 
+   
+   
+     printf("\nEnter  Number  : ");
+     scanf("%d",&ival1);
+	 
+	 
+     printf("\nEnter Power You Want : ");
+     scanf("%d",&ival2);
+	 
+	 
+   
+     iret = DisplayTable(ival1,ival2);
+	 
+	 printf("\nPower Is : %d ",iret);
+	 
 
-  printf("\nEnter Starting Point : ");
-  scanf("%d",&iVal1);
-
-  printf("\nEnter Ending Point : ");
-  scanf("%d",&iVal2);
-
-
-   DisplayEven(iVal1,iVal2);
-
-   printf("\n");
-
+   
    return 0;
+
 
 }

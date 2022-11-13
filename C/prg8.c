@@ -1,70 +1,47 @@
 #include<stdio.h>
-#include<stdbool.h>
 
-
-
-bool CheckPalindrome(int iNo)
+int  Display( int ino )     //function defination
 {
-
-  int iDigit = 0;
-  int iRev = 0;
-  int Temp = iNo;
-
-  // if(iNo < 0)
-  // {
-  // 	iNo = -iNo;
-  // }
-
-  while(iNo != 0)
-  {
-  	iDigit = iNo % 10;
-     
-     iRev = iRev * 10 + iDigit;
-
-     iNo = iNo / 10;
-
-  }
-
-  if( iRev == Temp)
-  {
-  	return true;
-  }
-  else
-  {
-  	return false;
-  }
-
-
-
+	auto int idigit = 0;    // local variable
+	auto int icnt = 0;
+	  
+	  if (ino<0)
+	  {
+		  ino = -ino;
+	  }
+	  
+	  if (ino == 0)
+	  {
+		  return 1;
+	  }
+	  
+	  while(ino != 0)
+	  {
+		  
+   
+	     idigit = ino % 10;
+          icnt++;
+	     ino = ino /10;
+	  
+	  } 
+	  
+	   return icnt;
+	  
+	
 }
 
 int main()
-{
-   int iVal = 0;
-   bool bRet = false;
-
-   printf("\nEnter Number : ");
-   scanf("%d",&iVal);
-
-   bRet = CheckPalindrome(iVal);
-
-   if(bRet == true)
-   {
+{	
+      auto int  ival = 0;
+	  auto int iret =0;
+	  
+	  printf("\n Enter the number : ");
+	  scanf("%d",&ival);
    
-      printf("\nNumber Is Palindrome");
-
-   }
-   else
-   {
-     printf("\nNumber Is Not Palindrome");
-
-   }
-
-
-  printf("\n");
-
-  return 0;
-
-
-
+	 iret = Display(ival);     // function call
+	 
+	 printf("\n Number of Digits Are : %d",iret);
+ 	
+	return 0;
+	
 }

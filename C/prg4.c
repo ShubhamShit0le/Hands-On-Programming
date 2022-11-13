@@ -1,43 +1,40 @@
+
 #include<stdio.h>
 
-int AddNumber(int iNo)
+int Addition(int ival)
 {
-   int iSum = 0;
-   int iCnt = 0;
-
-   if(iNo < 0)
-   {
-
-   	iNo = -iNo;
-
-   }
-
-   for(iCnt = 1; iCnt <= iNo; iCnt++)
-   {
-
-   	iSum = iSum + iCnt;
+   int isum = 0;
+   int icnt = 0;
    
-   }
+   if(ival<0)
+   {
+	   ival = -ival;
+   }	   
 
-   return iSum;
-
+  for(icnt =1; icnt<=ival; icnt++)
+  {
+    isum = isum+icnt;	
+  }
+     
+	 return isum;   	
+    
 }
+
 
 int main()
 {
-  int iVal = 0;
-  int iRet = 0;
+	auto int ino = 0;
+	auto int iret = 0;
 
-  printf("\nEnter Number : ");
-  scanf("%d",&iVal);
+   printf("\nEnter Number You Want : ");
+   scanf("%d",&ino);  
 
-  iRet = AddNumber(iVal);
-
-  printf("\nTill That Number Addition is : %d ",iRet);
+  iret = Addition(ino);   //Function call
   
-  printf("\n");
-
-  return 0;
-
- 
+  printf("Addition is : %d ",iret);
+   
+	return 0;
+	
+	
+	
 }

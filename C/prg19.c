@@ -1,41 +1,37 @@
-/*
-
-Accept number from user and display below pattern.
-Input : 5
-Output : 5 # 4 # 3 # 2 # 1 #
-
-*/
-
 
 #include<stdio.h>
 
-void Display(int iNo)
+void DisplayFactor(int ival)
 {
-
-int i = 0;
-
-printf("\n");
-
-for (i = iNo; i >= 1 ; i--)
-{
-   
- printf("%d # \t",i);
-
-}
-
-}
+	 int icnt  = 0;
+	 
+	 if (ival < 0)
+	 {
+		 ival = - ival;
+	 }	 
+	 
+	 for(icnt = 1; icnt <= (ival / 2) ; icnt++)  // O(N/2)
+	 {
+		  if((ival % icnt) == 0)
+		  {
+			   printf( "%d\n",icnt);
+			         
+		  }	   
+	 }
+}	 
 
 
 int main()
 {
-	int  iVal = 0;
-
-	printf("\nEntern number : ");
-	scanf("%d",&iVal);
-
-	Display(iVal);
-
-	printf("\n");
-
+	int ino = 0;
+	
+	printf(" enter the number : ");
+	scanf("%d",&ino);
+	
+	DisplayFactor(ino); // function call
+	
 	return 0;
-}
+  	
+	
+	
+}	

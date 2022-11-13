@@ -1,49 +1,41 @@
 #include<stdio.h>
+#include<stdbool.h>
 
-int CountDigit(int iNo)
+bool checkEven(int ival)
 {
-  
-  int iDigit = 0;
-  int iCnt = 0;
-
-  if(iNo < 0)
-  {
-  	iNo = -iNo;
-
-  }
-
-  if(iNo == 0)
-  {
-  	return 1;
-  }
-
-  while(iNo != 0)
-  {
-  	iDigit = iNo % 10;
-
-  	iCnt++;
-
-  	iNo = iNo / 10;
-
-  }
-
-  return iCnt;
+	if((ival % 2) == 0)
+	{
+		return true;
+ 	}
+     else 
+	 {
+		  return false;
+	 }
 }
+
 
 int main()
 {
-	int iVal = 0;
-	int iRet = 0;
+   int ino = 0;
+   bool bret = false;
 
-	printf("\nEnter Digit : ");
-	scanf("%d",&iVal);
+    printf("\nEnter the number : ");
+    scanf("%d",&ino);
 
-	iRet = CountDigit(iVal);
+     bret = checkEven(ino);
+   
+    if(bret == true)
+    {
+		printf("%d Is even number ",ino);
+	}
+     else
+	 {
+        printf("%d is not even number ",ino);
+     }
 
-	printf("\nNumber of digits are : %d ",iRet);
-
-	printf("\n");
-
-	return 0;
-
-}
+      return 0;
+}	  
+	
+   	
+  	 
+     

@@ -1,69 +1,46 @@
 #include<stdio.h>
-#include<stdbool.h>
 
-bool CheckPerfect(int iNo)
+int  SumEven( int ino )     //function defination
 {
-	int iCnt  = 0;
-	int iSum = 0;
-
-	if(iNo < 0)
-	{
-		iNo = -iNo;
-	}
-   
-   
-  if(iNo == 0)
-  {
-    return 0;
-  }
-
-
-
-     for(iCnt = 1; iCnt <= (iNo/2); iCnt++)
-     {
-        if((iNo % iCnt) == 0)
-        {
-        	iSum = iSum +iCnt;
-        }
-
-     }
-    
-     if(iSum == iNo)
-     {
-     	return true;
-     }
-     else
-     {
-     	return false;
-
-     }
-
-
-
+	auto int idigit = 0;    // local variable
+	auto int isum = 0;
+	  
+	   if (ino<0)
+	  {
+		  ino = -ino;
+	  }
+	  
+	  
+	  while(ino != 0)
+	  {
+	     idigit = ino % 10;
+		
+         if((idigit % 2)== 0)
+		 {			 
+            
+             isum = idigit + isum;
+	  
+	     } 
+		   ino = ino /10;
+	  }	   
+	  
+	   return isum;
+	  
+	
 }
 
-
 int main()
-{
-  int iVal = 0;
-  bool bRet = 0;
-
-  printf("\nEnter Number : ") ;
-  scanf("%d",&iVal);
-
-
-  bRet = CheckPerfect(iVal);
-
-  if(bRet  == true)
-  {
-    printf("\nNumber is perfect");
-
-  }
-  else
-  {
-  	printf("\nNumber is not perfect");
-  }
-
-  printf("\n");
-
+{	
+      auto int  ival = 0;
+	  auto int iret =0;
+	  
+	  printf("\n Enter the number : ");
+	  scanf("%d",&ival);
+   
+	 iret = SumEven(ival);     // function call
+	 
+	 printf("\n Addition Of Even Digits Are : %d",iret);
+ 	
+	return 0;
+	
 }
